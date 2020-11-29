@@ -1,4 +1,4 @@
-package org.gemography.backendchallend.models;
+package org.gemography.backendchallenge.models;
 
 import java.util.List;
 

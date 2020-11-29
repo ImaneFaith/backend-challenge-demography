@@ -1,12 +1,8 @@
-package org.gemography.backendchallend;
-
-import org.gemography.backendchallend.configs.DateGenerator;
-import org.gemography.backendchallend.services.ServiceHelper;
+package org.gemography.backendchallenge;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
-import ch.qos.logback.classic.pattern.DateConverter;
 
 @SpringBootApplication
 @EnableFeignClients

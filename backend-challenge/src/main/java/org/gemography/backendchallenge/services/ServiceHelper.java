@@ -1,8 +1,7 @@
-package org.gemography.backendchallend.services;
+package org.gemography.backendchallenge.services;
 
-import org.gemography.backendchallend.configs.DateGenerator;
-import org.gemography.backendchallend.configs.ServiceHelperConfig;
-
+import org.gemography.backendchallenge.configs.DateGenerator;
+import org.gemography.backendchallenge.configs.ServiceHelperConfig;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;

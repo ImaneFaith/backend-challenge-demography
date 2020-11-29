@@ -1,4 +1,4 @@
-package org.gemography.backendchallend;
+package org.gemography.backendchallenge;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

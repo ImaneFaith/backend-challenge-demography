@@ -1,4 +1,4 @@
-package org.gemography.backendchallend.services;
+package org.gemography.backendchallenge.services;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,9 +8,9 @@ import java.util.List;
 
 import javax.ws.rs.QueryParam;
 
-import org.gemography.backendchallend.configs.DateGenerator;
-import org.gemography.backendchallend.models.GithubRepository;
-import org.gemography.backendchallend.models.Language;
+import org.gemography.backendchallenge.configs.DateGenerator;
+import org.gemography.backendchallenge.models.GithubRepository;
+import org.gemography.backendchallenge.models.Language;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

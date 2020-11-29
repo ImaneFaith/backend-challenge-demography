@@ -1,4 +1,4 @@
-package org.gemography.backendchallend.configs;
+package org.gemography.backendchallenge.configs;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;

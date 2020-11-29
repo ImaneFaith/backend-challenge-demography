@@ -1,4 +1,4 @@
-package org.gemography.backendchallend.configs;
+package org.gemography.backendchallenge.configs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
