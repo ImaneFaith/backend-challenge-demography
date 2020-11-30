@@ -7,16 +7,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data @NoArgsConstructor @AllArgsConstructor
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class GithubRepository {
-		
+
 	@JsonProperty("html_url")
-		private String url;
-		private String full_name;
-		@JsonIgnore
-		private String language;
-		public GithubRepository(String url) {
-			super();
-			this.url = url;
-		}
+	private String url;
+	private String full_name;
+	@JsonIgnore
+	private String language;
+
+	public GithubRepository(String url) {
+		super();
+		this.url = url;
+	}
 }

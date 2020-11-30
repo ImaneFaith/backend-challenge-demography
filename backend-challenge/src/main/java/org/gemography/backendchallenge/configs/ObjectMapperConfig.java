@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+//used for json/ object serialization
 @Configuration
 public class ObjectMapperConfig {
 	

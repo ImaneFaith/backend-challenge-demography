@@ -24,11 +24,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 public class GithubService {
-
+	
+	//use the service helper to connect with the Github API
 	ServiceHelper serviceHelper;
 	
 	@Autowired
 	ObjectMapper mapper;
+	//use hashet to add unique name language
 	HashSet<Language> languagesList = new HashSet<>();
 	
 	
@@ -37,31 +39,33 @@ public class GithubService {
 		this.serviceHelper = serviceHelper;
 		
 	}
-
-	@GetMapping("/repos")
-	HashSet<Language> getRepos(@RequestParam("date") String date) throws JsonParseException, JsonMappingException, IOException{
+	
+	@GetMapping("/languages")
+	HashSet<Language> getRepos(@RequestParam("date") String date)
+			throws JsonParseException, JsonMappingException, IOException {
+		// read response from the service helper while giving a date, before,
+		// converting the date to bring the repositories 30 days before the date given
 		JsonNode repos = mapper.readTree(serviceHelper.getRepositories(DateGenerator.convertDate(date)));
-		System.out.println(DateGenerator.convertDate(date));
+		// put the repositories in a list
 		List<GithubRepository> repositories = new ArrayList<GithubRepository>();
-		repos.get("items").forEach(rep ->{
-			if(!(rep.get("language").asText().equals("null"))) {
-				languagesList.add(new Language(rep.get("language").toString(),new ArrayList<>(),0));
-				repositories.add(new GithubRepository(rep.get("html_url").toString(),rep.get("full_name").toString(),rep.get("language").toString()));
+		repos.get("items").forEach(rep -> {
+			if (!(rep.get("language").asText().equals("null"))) {
+				languagesList.add(new Language(rep.get("language").toString(), new ArrayList<>(), 0));
+				repositories.add(new GithubRepository(rep.get("html_url").toString(), rep.get("full_name").toString(),
+						rep.get("language").toString()));
 
 			}
 		});
-		System.out.println(repos.get("items").size());
-		System.out.println(languagesList);
-		languagesList.forEach(l ->{
-			repositories.forEach(rep ->{
-				if(l.getName().equals(rep.getLanguage())) {
+		// affect repository to language using it
+		languagesList.forEach(l -> {
+			repositories.forEach(rep -> {
+				if (l.getName().equals(rep.getLanguage())) {
 					l.getRepositories().add(rep);
 				}
 			});
 			l.setNumberRepos(l.getRepositories().size());
 		});
-		System.out.println(languagesList);
 		return languagesList;
-	
-	} 
+
+	}
 }
